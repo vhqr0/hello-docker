@@ -1,0 +1,17 @@
+version: "2.0"
+services:
+  flask-dev:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./app:/app
+    environment:
+      - ENV=DEV
+    links:
+      - dnmonster
+      - redis
+  dnmonster:
+    image: amouat/dnmonster:1.0
+  redis:
+    image: redis
