@@ -1,0 +1,17 @@
+version: apps/v1
+kind: Deployment
+metadata:
+  name: dnmonster
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: dnmonster
+  template:
+    metadata:
+      labels:
+        app: dnmonster
+    spec:
+      containers:
+        - name: dnmonster
+          image: amouat/dnmonster:1.0

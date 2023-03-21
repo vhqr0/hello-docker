@@ -5,9 +5,9 @@ RUN pip install -i https://pypi.tuna.tsinghua.edu.cn/simple \
 
 COPY app /app
 COPY entrypoint.sh /entrypoint.sh
+RUN mkdir -p /data
 
-WORKDIR /app
-USER www-data
 EXPOSE 5000
 
-ENTRYPOINT ["/entrypoint.sh"]
+WORKDIR /
+CMD /entrypoint.sh

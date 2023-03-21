@@ -1,11 +1,12 @@
 version: "2.0"
 services:
-  flask-dev:
+  app:
     build: .
     ports:
       - "5000:5000"
     volumes:
       - ./app:/app
+      - ./data:/data
     environment:
       - ENV=DEV
     links:
